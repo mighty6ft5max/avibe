@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { FaTwitter } from "react-icons/fa";
 import { Box, Grid, Typography, withStyles } from "@material-ui/core";
 
@@ -36,6 +37,10 @@ const styles = (theme) => ({
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },
+  twitter: {
+    color: "#00acee",
+    fontSize: "1rem",
+  },
 });
 const App = ({ classes }) => {
   const [footerHeight, setFooterHeight] = useState(0);
@@ -58,11 +63,28 @@ const App = ({ classes }) => {
             <Grid container>
               <Grid item xs>
                 <Typography classes={{ root: classes.site_title }} variant="h1">
-                  {"//AVibe"}
+                  <Link to="/" alt="AVibe Home Page">
+                    {"//AVibe"}
+                  </Link>
                 </Typography>
               </Grid>
               <Grid item>
-                <FaTwitter />
+                <Grid
+                  container
+                  style={{ height: "100%" }}
+                  direction="column"
+                  justify="center"
+                  alignItems="flex-end"
+                >
+                  <Grid item>
+                    <Link
+                      to="https://www.twitter.com/avibevibe"
+                      alt="AVibe Official Twitter"
+                    >
+                      <FaTwitter className={classes.twitter} />
+                    </Link>
+                  </Grid>
+                </Grid>
               </Grid>
             </Grid>
           </Box>

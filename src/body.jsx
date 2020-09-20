@@ -13,11 +13,11 @@ import {
   Typography,
   withStyles,
 } from "@material-ui/core";
-import TW1 from "./images/tableware/Tiny_Express_1.jpg";
-import TW2 from "./images/tableware/Tiny_Express_2.jpg";
-import TW3 from "./images/tableware/Tiny_Express_3.jpg";
-import TW4 from "./images/tableware/Tiny_Express_4.jpg";
-import TW5 from "./images/tableware/Tiny_Express_5.jpg";
+import TW1 from "./images/tableware/TE1.jpg";
+import TW2 from "./images/tableware/TE2.jpg";
+import TW3 from "./images/tableware/TE3.jpg";
+import TW4 from "./images/tableware/TE4.jpg";
+import TW5 from "./images/tableware/TE5.jpg";
 import JR1 from "./images/1/Jade_Roller_1.jpg";
 import "./App.css";
 import Image_1 from "./images/image_1.jpg";
@@ -26,11 +26,7 @@ const styles = (theme) => ({
   actions: {
     padding: 0,
   },
-  body: {
-    background: `url(${Image_1})`,
-    backgroundSize: "cover",
-    maxHeight: 275,
-  },
+  body: { width: "100%", height: "100%" },
   button: {
     borderRadius: 0,
     height: 30,
@@ -43,7 +39,25 @@ const styles = (theme) => ({
     maxWidth: 245,
   },
   content: {
-    transform: "translateY(115px)",
+    margin: "0 auto",
+    maxWidth: 700,
+    padding: "0 24px",
+    marginTop: -64,
+    width: "100%",
+    [theme.breakpoints.up("md")]: {
+      marginTop: -128,
+      padding: "0 64px",
+      // transform: "translateY(250px)",
+    },
+  },
+  slideshow: {
+    background: `url(${Image_1})`,
+    backgroundSize: "cover",
+    width: "100%",
+    height: 275,
+    [theme.breakpoints.up("md")]: {
+      height: 400,
+    },
   },
   details: {
     background: theme.palette.tertiary.main,
@@ -66,13 +80,8 @@ const Body = ({ classes, bodyRef }) => {
   let history = useHistory();
   const Home = () => {
     return (
-      <Box
-        style={{
-          width: "100%",
-          height: "100%",
-          background: "rgba(0,0,0,.5)",
-        }}
-      >
+      <Box style={{}}>
+        <Grid classes={{ root: classes.slideshow }} container></Grid>
         <Grid
           container
           classes={{ root: classes.content }}
@@ -80,7 +89,7 @@ const Body = ({ classes, bodyRef }) => {
           justify="center"
           alignItems="center"
           spacing={4}
-          style={{ margin: "0 auto", maxWidth: 700, padding: 64 }}
+          style={{}}
         >
           <Grid item>
             <Card classes={{ root: classes.card }}>
