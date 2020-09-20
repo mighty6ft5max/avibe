@@ -24,6 +24,7 @@ const styles = (theme) => ({
   header: {
     background: theme.palette.tertiary.main,
     boxShadow: theme.shadows[8],
+    padding: "0 24px",
     zIndex: 1,
   },
   media: {
@@ -33,7 +34,7 @@ const styles = (theme) => ({
     //    color: theme.palette.secondary.main,
     //textShadow: `1px 1px 1px ${theme.palette.tertiary.main}`,
     background: `-webkit-linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-    paddingLeft: 16,
+    paddingLeft: 4,
     "-webkit-background-clip": "text",
     "-webkit-text-fill-color": "transparent",
   },
@@ -44,9 +45,11 @@ const styles = (theme) => ({
 });
 const App = ({ classes }) => {
   const [footerHeight, setFooterHeight] = useState(0);
+
   const headerRef = useRef();
   const bodyRef = useRef();
   const footerRef = useRef();
+
   useEffect(() => {
     const hr = headerRef.current?.getBoundingClientRect().height;
     const br = bodyRef.current?.getBoundingClientRect().height;
@@ -54,7 +57,7 @@ const App = ({ classes }) => {
     console.log(window.innerHeight, hr, br, minH);
     setFooterHeight(minH);
   }, [headerRef, bodyRef]);
-  //
+
   return (
     <div className="App" style={{ width: "100%" }}>
       <Grid container style={{}}>
