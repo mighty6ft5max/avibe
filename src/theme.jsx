@@ -22,6 +22,9 @@ const theme = createMuiTheme({
     borderRadius: 24,
   },
   typography: {
+    body1: {
+      fontSize: ".8rem",
+    },
     body2: {
       color: "rgb(5 32 36 / 44%)",
       fontFamily: "Arial",
@@ -45,6 +48,11 @@ const theme = createMuiTheme({
     h3: {
       fontWeight: "bold",
     },
+    h4: {
+      color: "rgb(5 32 36 / 60%)",
+      fontSize: "1rem",
+      fontStyle: "italic",
+    },
     h5: {
       color: "rgb(5 32 36)",
       fontSize: "1.1rem",
@@ -53,6 +61,14 @@ const theme = createMuiTheme({
     h6: {
       fontSize: 12,
       lineHeight: 0.8,
+    },
+    subtitle1: {
+      fontSize: ".75rem",
+      lineHeight: 1.21,
+      "& span": {
+        color: "gray",
+        fontWeight: "bold",
+      },
     },
   },
 });
