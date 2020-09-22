@@ -5,6 +5,7 @@ import { Switch, Route, useHistory } from "react-router-dom";
 import {
   Box,
   Button,
+  ButtonBase,
   Card,
   CardActionArea,
   CardActions,
@@ -22,6 +23,7 @@ import TW2 from "./images/tableware/TE2.jpg";
 import TW3 from "./images/tableware/TE3.jpg";
 import TW4 from "./images/tableware/TE4.jpg";
 import TW5 from "./images/tableware/TE5.jpg";
+//import TW5_s from "./images/tableware/TE5_s.jpg";
 import JadeButton from "./images/1/JadeButton.jpg";
 
 import JR2 from "./images/1/Jade2.jpg";
@@ -39,7 +41,7 @@ import Imgs_1 from "./images/img_s_1.jpg";
 import Imgs_2 from "./images/img_s_2.jpg";
 import Imgs_3 from "./images/img_s_3.jpg";
 import Imgs_4 from "./images/img_s_4.jpg";
-
+import AboutBack from "./images/background-about.jpg";
 const styles = (theme) => ({
   actions: {
     padding: 0,
@@ -94,9 +96,10 @@ const styles = (theme) => ({
     background: theme.palette.tertiary.main,
     width: "50%",
     "& span": {
-      background: `-webkit-linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-      "-webkit-background-clip": "text",
-      "-webkit-text-fill-color": "transparent",
+      // background: `-webkit-linear-gradient(${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+      // "-webkit-background-clip": "text",
+      // "-webkit-text-fill-color": "transparent",
+      color: "white",
     },
   },
   buy_now: {
@@ -117,7 +120,7 @@ const Body = ({ classes, bodyRef }) => {
   const backgroundImages = isMobile
     ? [Imgs_1, Imgs_2, Imgs_3, Imgs_4]
     : [Img_1, Img_2, Img_3, Img_4];
-
+  const aboutBackgroundImages = [AboutBack];
   //   const ss_height = () =>
   //     ss_holderRef.current?.getBoundingClientRect().height || 275;
   const config = {
@@ -303,14 +306,20 @@ const Body = ({ classes, bodyRef }) => {
         >
           {[TW1, TW2, TW3, TW4, TW5].map((pic) => {
             return (
-              <Grid key={pic} item xs={4}>
-                <Card style={{ height: 0, paddingTop: "100%" }}>
-                  <CardActionArea onClick={() => setModalImage(pic)}>
-                    <CardMedia
-                      style={{ paddingTop: "100%", marginTop: "-100%" }}
-                      image={pic}
-                    />
-                  </CardActionArea>
+              <Grid key={pic} item xs={6} sm={4}>
+                <Card style={{}}>
+                  <ButtonBase
+                    onClick={() => setModalImage(pic)}
+                    style={{ width: "100%", lineHeight: 0, height: "100%" }}
+                  >
+                    <Box>
+                      <img
+                        src={pic}
+                        alt={"Tiny Express Tableware"}
+                        style={{ width: "101%" }}
+                      />
+                    </Box>
+                  </ButtonBase>
                 </Card>
               </Grid>
             );
@@ -432,14 +441,20 @@ const Body = ({ classes, bodyRef }) => {
         >
           {[JR2, JR3, JR4, JR5, JR6, JR7].map((pic) => {
             return (
-              <Grid key={pic} item xs={4}>
+              <Grid key={pic} item xs={6} sm={4}>
                 <Card style={{ height: 0, paddingTop: "100%" }}>
-                  <CardActionArea onClick={() => setModalImage(pic)}>
-                    <CardMedia
-                      style={{ paddingTop: "100%", marginTop: "-100%" }}
-                      image={pic}
-                    />
-                  </CardActionArea>
+                  <ButtonBase
+                    onClick={() => setModalImage(pic)}
+                    style={{ width: "100%", lineHeight: 0, height: "100%" }}
+                  >
+                    <Box>
+                      <img
+                        src={pic}
+                        alt={"Jade Roller"}
+                        style={{ width: "100%" }}
+                      />
+                    </Box>
+                  </ButtonBase>
                 </Card>
               </Grid>
             );
@@ -542,40 +557,57 @@ const Body = ({ classes, bodyRef }) => {
 
   const About = () => {
     return (
-      <Grid container style={{ padding: 48, width: "100%" }} spacing={3}>
-        <Grid item xs={12}>
-          <Typography variant="h2">Get to know us</Typography>
-          <Typography variant="body1" component="div">
-            <p>
-              Founded in 2019 in Huntsville, Alabama, AVibe LLC is a family
-              owned company. We focus on partnering with top manufacturers all
-              over the world to build high-quality brands that stand far apart
-              from the competition. Our company is constantly evolving and
-              growing, but our primary focus is on leveraging online platforms
-              for showcasing each of our brands. Steering clear of "brick and
-              mortar" locations ensures that we can focus fully on product
-              quality, supplier relationships, and the needs of our customers.
-            </p>
-            <p>
-              Our current product brands are Sandholt and Tiny Express, with
-              Taste Emporium launching in late 2020! Sandholt jade roller gift
-              sets were the company's very first product and can be found on
-              EBay! Our first Amazon product came with the launch of the Tiny
-              Express disposable gold tableware! This is the start of a line of
-              baby shower products that will focus on that all important mix of
-              top quality and "cuteness factor."
-            </p>
-            <p>
-              If you would like to contact us, please fill out the contact form
-              on our website and we'll get back to you.  We typically respond
-              quickly unless your message comes in during an Alabama football
-              game weekend... in that case, an answer may have to wait until
-              Monday or Tuesday :-) Thank you for visiting our site, and don't
-              forget to like us on Facebook and Instagram!
-            </p>
-          </Typography>
+      <>
+        <div className={classes.slideshow}>
+          {backgroundTransitions(({ width, height, opacity }, item) => {
+            return (
+              <animated.img
+                src={aboutBackgroundImages[0]}
+                alt="slideshow"
+                style={{
+                  position: "absolute",
+                  height,
+                  width,
+                }}
+              />
+            );
+          })}
+        </div>
+        <Grid container style={{ padding: 48, width: "100%" }} spacing={3}>
+          <Grid item xs={12}>
+            <Typography variant="h2">Get to know us</Typography>
+            <Typography variant="body1" component="div">
+              <p>
+                Founded in 2019 in Huntsville, Alabama, AVibe LLC is a family
+                owned company. We focus on partnering with top manufacturers all
+                over the world to build high-quality brands that stand far apart
+                from the competition. Our company is constantly evolving and
+                growing, but our primary focus is on leveraging online platforms
+                for showcasing each of our brands. Steering clear of "brick and
+                mortar" locations ensures that we can focus fully on product
+                quality, supplier relationships, and the needs of our customers.
+              </p>
+              <p>
+                Our current product brands are Sandholt and Tiny Express, with
+                Taste Emporium launching in late 2020! Sandholt jade roller gift
+                sets were the company's very first product and can be found on
+                EBay! Our first Amazon product came with the launch of the Tiny
+                Express disposable gold tableware! This is the start of a line
+                of baby shower products that will focus on that all important
+                mix of top quality and "cuteness factor."
+              </p>
+              <p>
+                If you would like to contact us, please fill out the contact
+                form on our website and we'll get back to you.  We typically
+                respond quickly unless your message comes in during an Alabama
+                football game weekend... in that case, an answer may have to
+                wait until Monday or Tuesday :-) Thank you for visiting our
+                site, and don't forget to like us on Facebook and Instagram!
+              </p>
+            </Typography>
+          </Grid>
         </Grid>
-      </Grid>
+      </>
     );
   };
 
