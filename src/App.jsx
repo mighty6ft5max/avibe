@@ -3,6 +3,8 @@ import { Link, useHistory, useLocation } from "react-router-dom";
 import { FaBars, FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 import {
   Button,
+  ButtonBase,
+  Drawer,
   Box,
   Grid,
   Hidden,
@@ -80,6 +82,7 @@ const styles = (theme) => ({
 });
 const App = ({ classes }) => {
   const [footerHeight, setFooterHeight] = useState(0);
+  const [open, setOpen] = useState(false);
   let history = useHistory();
   const { pathname } = useLocation();
   const headerRef = useRef();
@@ -169,7 +172,9 @@ const App = ({ classes }) => {
               </Grid>
               <Grid item xs style={{ textAlign: "right" }}>
                 <Hidden smUp>
-                  <FaBars className={classes.menu} />
+                  <ButtonBase onClick={() => setOpen(true)}>
+                    <FaBars className={classes.menu} />
+                  </ButtonBase>
                 </Hidden>
                 <Hidden xsDown>
                   <Grid
@@ -233,6 +238,57 @@ const App = ({ classes }) => {
         <Body bodyRef={bodyRef} />
         <Footer footerRef={footerRef} footerHeight={footerHeight} />
       </Grid>
+      <Drawer open={open} onClose={() => setOpen(false)}>
+        <Grid
+          container
+          direction="column"
+          justify="flex-start"
+          alignItems="flex-end"
+          style={{ width: 300, padding: 24 }}
+        >
+          <Grid item>
+            <Button
+              onClick={() => {
+                setOpen(false);
+                history.push("/");
+              }}
+              classes={{
+                root: classes.dash,
+              }}
+            >
+              Home
+            </Button>
+          </Grid>
+          {/* <Grid item>
+                      <Button
+                        onClick={() => history.push("/testimonials")}
+                        classes={{
+                          root:
+                            classes[
+                              _.startsWith(pathname, "/testimonials")
+                                ? "menu_item_active"
+                                : "menu_item"
+                            ],
+                        }}
+                      >
+                        Testimonials
+                      </Button>
+                    </Grid> */}
+          <Grid item>
+            <Button
+              onClick={() => {
+                setOpen(false);
+                history.push("/about");
+              }}
+              classes={{
+                root: classes.dash,
+              }}
+            >
+              About Us
+            </Button>
+          </Grid>
+        </Grid>
+      </Drawer>
     </div>
   );
 };

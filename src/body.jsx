@@ -442,7 +442,7 @@ const Body = ({ classes, bodyRef }) => {
           {[JR2, JR3, JR4, JR5, JR6, JR7].map((pic) => {
             return (
               <Grid key={pic} item xs={6} sm={4}>
-                <Card style={{ height: 0, paddingTop: "100%" }}>
+                <Card style={{}}>
                   <ButtonBase
                     onClick={() => setModalImage(pic)}
                     style={{ width: "100%", lineHeight: 0, height: "100%" }}
