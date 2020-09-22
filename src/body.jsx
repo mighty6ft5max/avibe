@@ -23,6 +23,7 @@ import TW2 from "./images/tableware/TE2.jpg";
 import TW3 from "./images/tableware/TE3.jpg";
 import TW4 from "./images/tableware/TE4.jpg";
 import TW5 from "./images/tableware/TE5.jpg";
+import TW6 from "./images/tableware/TE6.jpg";
 //import TW5_s from "./images/tableware/TE5_s.jpg";
 import JadeButton from "./images/1/JadeButton.jpg";
 
@@ -304,7 +305,7 @@ const Body = ({ classes, bodyRef }) => {
           spacing={4}
           style={{ margin: "0 auto", maxWidth: 700, padding: 64 }}
         >
-          {[TW1, TW2, TW3, TW4, TW5].map((pic) => {
+          {[TW1, TW2, TW3, TW4, TW5, TW6].map((pic) => {
             return (
               <Grid key={pic} item xs={6} sm={4}>
                 <Card style={{}}>
