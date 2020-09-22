@@ -602,7 +602,8 @@ const Body = ({ classes, bodyRef }) => {
                 respond quickly unless your message comes in during an Alabama
                 football game weekend... in that case, an answer may have to
                 wait until Monday or Tuesday :-) Thank you for visiting our
-                site, and don't forget to like us on Facebook and Instagram!
+                site, and don't forget to follow us on Twitter, Facebook, and
+                Instagram!
               </p>
             </Typography>
           </Grid>
