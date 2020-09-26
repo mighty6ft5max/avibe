@@ -189,7 +189,7 @@ const App = ({ classes }) => {
                         classes={{
                           root:
                             classes[
-                              !_.startsWith(pathname, "/testimonials") &&
+                              !_.startsWith(pathname, "/contact") &&
                               !_.startsWith(pathname, "/about")
                                 ? "menu_item_active"
                                 : "menu_item"
@@ -199,21 +199,21 @@ const App = ({ classes }) => {
                         Home
                       </Button>
                     </Grid>
-                    {/* <Grid item>
+                    <Grid item>
                       <Button
-                        onClick={() => history.push("/testimonials")}
+                        onClick={() => history.push("/contact")}
                         classes={{
                           root:
                             classes[
-                              _.startsWith(pathname, "/testimonials")
+                              _.startsWith(pathname, "/contact")
                                 ? "menu_item_active"
                                 : "menu_item"
                             ],
                         }}
                       >
-                        Testimonials
+                        Contact
                       </Button>
-                    </Grid> */}
+                    </Grid>
                     <Grid item>
                       <Button
                         onClick={() => history.push("/about")}
@@ -226,7 +226,7 @@ const App = ({ classes }) => {
                             ],
                         }}
                       >
-                        About Us
+                        About
                       </Button>
                     </Grid>
                   </Grid>
@@ -257,6 +257,19 @@ const App = ({ classes }) => {
               }}
             >
               Home
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button
+              onClick={() => {
+                setOpen(false);
+                history.push("/contact");
+              }}
+              classes={{
+                root: classes.dash,
+              }}
+            >
+              Contact Us
             </Button>
           </Grid>
           {/* <Grid item>

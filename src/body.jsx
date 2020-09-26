@@ -17,6 +17,7 @@ import {
   useMediaQuery,
   withStyles,
 } from "@material-ui/core";
+import ContactBack from "./images/contact_back.jpg";
 //import { useTheme } from "@material-ui/core/styles";
 import TW1 from "./images/tableware/TE1.jpg";
 import TW2 from "./images/tableware/TE2.jpg";
@@ -59,6 +60,10 @@ const styles = (theme) => ({
     boxShadow: theme.shadows[8],
     maxWidth: 245,
   },
+  contact_back: {
+    background: `url(${ContactBack})`,
+    backgroundSize: "cover",
+  },
   content: {
     margin: "0 auto",
     maxWidth: 700,
@@ -70,6 +75,15 @@ const styles = (theme) => ({
       padding: "0 64px",
       // transform: "translateY(250px)",
     },
+  },
+  form_holder: {
+    background: "linear-gradient(45deg,rgba(255,255,255,.3),transparent)",
+    boxShadow: theme.shadows[8],
+  },
+  input: { width: 270 },
+  input_label: { lineHeight: 1.6, margin: 0 },
+  input_holder: {
+    marginBottom: 12,
   },
   shop_now: {
     background: `linear-gradient(45deg,${theme.palette.primary.main},${theme.palette.secondary.main})`,
@@ -147,6 +161,81 @@ const Body = ({ classes, bodyRef }) => {
   function handleClose() {
     setModalImage(false);
   }
+
+  const Contact = () => {
+    return (
+      <>
+        {/* <div className={classes.slideshow}>
+          {backgroundTransitions(({ width, height, opacity }, item) => {
+            return (
+              <animated.img
+                src={aboutBackgroundImages[0]}
+                alt="slideshow"
+                style={{
+                  position: "absolute",
+                  height,
+                  width,
+                }}
+              />
+            );
+          })}
+        </div> */}
+
+        <Grid
+          classes={{ root: classes.contact_back }}
+          container
+          style={{ padding: 48, minHeight: "100vh", width: "100%" }}
+          direction="column"
+          justify="flex-start"
+          alignItems="center"
+        >
+          <Grid item style={{ width: "100%" }}>
+            <Typography
+              variant="h2"
+              style={{ color: "white", padding: "48px 48px 0" }}
+            >
+              Contact us
+            </Typography>
+          </Grid>
+          <Grid
+            classes={{ root: classes.form_holder }}
+            item
+            style={{ padding: 48, color: "white" }}
+          >
+            <form name="contact" method="post">
+              <input type="hidden" name="form-name" value="contact" />
+              <div style={{}}>
+                <div className={classes.input_holder}>
+                  <p className={classes.input_label}>Your Name:</p>
+
+                  <input className={classes.input} type="text" name="name" />
+                </div>
+                <div className={classes.input_holder}>
+                  <p className={classes.input_label}>Your Email:</p>
+
+                  <input className={classes.input} type="email" name="email" />
+                </div>
+                <div className={classes.input_holder}>
+                  <p className={classes.input_label}>Message:</p>
+                  <textarea
+                    className={classes.input}
+                    name="message"
+                    rows="7"
+                  ></textarea>
+                </div>
+                <div>
+                  <p>
+                    <button type="submit">Send</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </Grid>
+        </Grid>
+      </>
+    );
+  };
+
   const Home = () => {
     return (
       <Box style={{}}>
@@ -616,6 +705,9 @@ const Body = ({ classes, bodyRef }) => {
   return (
     <Grid classes={{ root: classes.body }} item xs={12} ref={bodyRef}>
       <Switch>
+        <Route path="/contact">
+          <Contact />
+        </Route>
         <Route path="/about">
           <About />
         </Route>
