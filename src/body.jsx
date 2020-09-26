@@ -190,17 +190,14 @@ const Body = ({ classes, bodyRef }) => {
           alignItems="center"
         >
           <Grid item style={{ width: "100%" }}>
-            <Typography
-              variant="h2"
-              style={{ color: "white", padding: "48px 48px 0" }}
-            >
+            <Typography variant="h2" style={{ color: "white" }}>
               Contact us
             </Typography>
           </Grid>
           <Grid
             classes={{ root: classes.form_holder }}
             item
-            style={{ padding: 48, color: "white" }}
+            style={{ padding: 48, color: "white", marginBottom: 48 }}
           >
             <form name="contact" method="post">
               <input type="hidden" name="form-name" value="contact" />
@@ -226,6 +223,28 @@ const Body = ({ classes, bodyRef }) => {
                 <div>
                   <p>
                     <button type="submit">Send</button>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </Grid>
+          <Grid
+            classes={{ root: classes.form_holder }}
+            item
+            style={{ padding: 48, color: "white" }}
+          >
+            <form name="mailing-list" method="post">
+              <input type="hidden" name="form-name" value="mailing-list" />
+              <div style={{}}>
+                <div className={classes.input_holder}>
+                  <p className={classes.input_label}>
+                    <i>Subscribe to our mailing list:</i>
+                  </p>
+                  <input className={classes.input} type="email" name="email" />
+                </div>
+                <div>
+                  <p>
+                    <button type="submit">Subscribe</button>
                   </p>
                 </div>
               </div>
