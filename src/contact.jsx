@@ -128,7 +128,7 @@ const Contact = ({ classes, isMobile }) => {
           style={{ padding: 48, color: "white", marginBottom: 48 }}
         >
           <form
-            action="/contact"
+            action="/"
             name="contact"
             method="post"
             netlify
