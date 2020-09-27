@@ -27,7 +27,15 @@
       <input type="email" name="email" />
       <textarea name="message"></textarea>
     </form>
-    <form name="mailing-list" netlify netlify-honeypot="bot-field" hidden>
+    <form
+      name="form-name"
+      netlify
+      method="post"
+      action="/"
+      data-netlify="true"
+      netlify-honeypot="bot-field"
+      hidden
+    >
       <input type="email" name="email" />
     </form>
   </body>

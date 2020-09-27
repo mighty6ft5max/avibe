@@ -188,7 +188,15 @@ const Contact = ({ classes, isMobile }) => {
           item
           style={{ padding: 48, color: "white" }}
         >
-          <form name="mailing-list" method="post">
+          <form
+            name="mailing-list"
+            action="/"
+            method="post"
+            netlify
+            data-netlify="true"
+            data-netlify-honeypot="bot-field"
+            enctype="application/x-www-form-urlencoded"
+          >
             <input type="hidden" name="form-name" value="mailing-list" />
             <div style={{}}>
               <div className={classes.input_holder}>
