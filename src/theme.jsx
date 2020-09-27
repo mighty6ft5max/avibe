@@ -2,25 +2,26 @@ import { createMuiTheme } from "@material-ui/core/styles";
 
 export const desktop_header_height = 600;
 export const content_max_width = 960;
-
+const primary = "#02ccfe";
+const primary_5 = "rgb(2 204 254 / .5)";
+const secondary = "#51cc93";
+const tertiary = "rgb(5 32 36)";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#02ccfe",
+      main: primary,
     },
     secondary: {
-      main: "#51cc93",
+      main: secondary,
     },
     tertiary: {
-      main: "rgb(5 32 36)",
+      main: tertiary,
     },
     background: {
       default: "rgb(255,255,255)",
     },
   },
-  shape: {
-    borderRadius: 24,
-  },
+  shape: {},
   typography: {
     body1: {
       fontSize: ".8rem",
@@ -68,6 +69,34 @@ const theme = createMuiTheme({
       "& span": {
         color: "gray",
         fontWeight: "bold",
+      },
+    },
+  },
+  overrides: {
+    MuiInputLabel: {
+      outlined: {
+        color: "white",
+        transform: "translate(14px, 12px) scale(1)",
+        textShadow: "1px 0px 2px rgb(255 255 255 / .6)",
+        fontStyle: "italic",
+      },
+      shrink: {
+        color: primary + " !important",
+        textShadow: "none !important",
+      },
+    },
+    MuiOutlinedInput: {
+      input: {
+        color: "white",
+        padding: 10,
+        textShadow: "1px 0px 2px rgb(255 255 255 / .6)",
+      },
+      notchedOutline: {
+        borderColor: primary_5,
+        borderRadius: 4,
+      },
+      root: {
+        background: "rgb(5 32 36 / .7)",
       },
     },
   },

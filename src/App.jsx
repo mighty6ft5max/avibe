@@ -198,6 +198,21 @@ const App = ({ classes }) => {
                       >
                         Home
                       </Button>
+                    </Grid>{" "}
+                    <Grid item>
+                      <Button
+                        onClick={() => history.push("/about")}
+                        classes={{
+                          root:
+                            classes[
+                              _.startsWith(pathname, "/about")
+                                ? "menu_item_active"
+                                : "menu_item"
+                            ],
+                        }}
+                      >
+                        About
+                      </Button>
                     </Grid>
                     <Grid item>
                       <Button
@@ -212,21 +227,6 @@ const App = ({ classes }) => {
                         }}
                       >
                         Contact
-                      </Button>
-                    </Grid>
-                    <Grid item>
-                      <Button
-                        onClick={() => history.push("/about")}
-                        classes={{
-                          root:
-                            classes[
-                              _.startsWith(pathname, "/about")
-                                ? "menu_item_active"
-                                : "menu_item"
-                            ],
-                        }}
-                      >
-                        About
                       </Button>
                     </Grid>
                   </Grid>

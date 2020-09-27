@@ -17,7 +17,7 @@ import {
   useMediaQuery,
   withStyles,
 } from "@material-ui/core";
-import ContactBack from "./images/contact_back.jpg";
+
 //import { useTheme } from "@material-ui/core/styles";
 import TW1 from "./images/tableware/TE1.jpg";
 import TW2 from "./images/tableware/TE2.jpg";
@@ -44,6 +44,7 @@ import Imgs_2 from "./images/img_s_2.jpg";
 import Imgs_3 from "./images/img_s_3.jpg";
 import Imgs_4 from "./images/img_s_4.jpg";
 import AboutBack from "./images/background-about.jpg";
+import Contact from "./contact";
 const styles = (theme) => ({
   actions: {
     padding: 0,
@@ -60,10 +61,7 @@ const styles = (theme) => ({
     boxShadow: theme.shadows[8],
     maxWidth: 245,
   },
-  contact_back: {
-    background: `url(${ContactBack})`,
-    backgroundSize: "cover",
-  },
+
   content: {
     margin: "0 auto",
     maxWidth: 700,
@@ -126,6 +124,7 @@ const styles = (theme) => ({
     paddingTop: "100%",
   },
 });
+
 const Body = ({ classes, bodyRef }) => {
   let history = useHistory();
 
@@ -161,99 +160,6 @@ const Body = ({ classes, bodyRef }) => {
   function handleClose() {
     setModalImage(false);
   }
-
-  const Contact = () => {
-    return (
-      <>
-        {/* <div className={classes.slideshow}>
-          {backgroundTransitions(({ width, height, opacity }, item) => {
-            return (
-              <animated.img
-                src={aboutBackgroundImages[0]}
-                alt="slideshow"
-                style={{
-                  position: "absolute",
-                  height,
-                  width,
-                }}
-              />
-            );
-          })}
-        </div> */}
-
-        <Grid
-          classes={{ root: classes.contact_back }}
-          container
-          style={{ padding: 48, minHeight: "100vh", width: "100%" }}
-          direction="column"
-          justify="flex-start"
-          alignItems="center"
-        >
-          <Grid item style={{ width: "100%" }}>
-            <Typography variant="h2" style={{ color: "white" }}>
-              Contact us
-            </Typography>
-          </Grid>
-          <Grid
-            classes={{ root: classes.form_holder }}
-            item
-            style={{ padding: 48, color: "white", marginBottom: 48 }}
-          >
-            <form name="contact" method="post">
-              <input type="hidden" name="form-name" value="contact" />
-              <div style={{}}>
-                <div className={classes.input_holder}>
-                  <p className={classes.input_label}>Your Name:</p>
-
-                  <input className={classes.input} type="text" name="name" />
-                </div>
-                <div className={classes.input_holder}>
-                  <p className={classes.input_label}>Your Email:</p>
-
-                  <input className={classes.input} type="email" name="email" />
-                </div>
-                <div className={classes.input_holder}>
-                  <p className={classes.input_label}>Message:</p>
-                  <textarea
-                    className={classes.input}
-                    name="message"
-                    rows="7"
-                  ></textarea>
-                </div>
-                <div>
-                  <p>
-                    <button type="submit">Send</button>
-                  </p>
-                </div>
-              </div>
-            </form>
-          </Grid>
-          <Grid
-            classes={{ root: classes.form_holder }}
-            item
-            style={{ padding: 48, color: "white" }}
-          >
-            <form name="mailing-list" method="post">
-              <input type="hidden" name="form-name" value="mailing-list" />
-              <div style={{}}>
-                <div className={classes.input_holder}>
-                  <p className={classes.input_label}>
-                    <i>Subscribe to our mailing list:</i>
-                  </p>
-                  <input className={classes.input} type="email" name="email" />
-                </div>
-                <div>
-                  <p>
-                    <button type="submit">Subscribe</button>
-                  </p>
-                </div>
-              </div>
-            </form>
-          </Grid>
-        </Grid>
-      </>
-    );
-  };
 
   const Home = () => {
     return (
@@ -381,7 +287,7 @@ const Body = ({ classes, bodyRef }) => {
               variant="h4"
               style={{ padding: 48, textAlign: "center" }}
             >
-              AVibe LLC is proud to be a family owned company, with headquarters
+              AVibe LLC is proud to be a family owned company with headquarters
               in Huntsville, Alabama… the Rocket City! We focus on developing
               top brands with high quality products in kitchen, home and health,
               and other categories, all while placing the needs and preferences
@@ -687,14 +593,15 @@ const Body = ({ classes, bodyRef }) => {
             <Typography variant="h2">Get to know us</Typography>
             <Typography variant="body1" component="div">
               <p>
-                Founded in 2019 in Huntsville, Alabama, AVibe LLC is a family
-                owned company. We focus on partnering with top manufacturers all
-                over the world to build high-quality brands that stand far apart
-                from the competition. Our company is constantly evolving and
-                growing, but our primary focus is on leveraging online platforms
-                for showcasing each of our brands. Steering clear of "brick and
-                mortar" locations ensures that we can focus fully on product
-                quality, supplier relationships, and the needs of our customers.
+                Founded in 2019 in Huntsville, Alabama, AVibe is a family and
+                veteran-owned e-commerce company. We focus on partnering
+                with top manufacturers all over the world to build high-quality
+                brands that stand far apart from the competition. Our company is
+                constantly evolving and growing, but our primary focus is on
+                leveraging online platforms for showcasing each of our brands.
+                Steering clear of "brick and mortar" locations ensures that we
+                can focus fully on product quality, supplier relationships, and
+                the needs of our customers.
               </p>
               <p>
                 Our current product brands are Sandholt and Tiny Express, with
