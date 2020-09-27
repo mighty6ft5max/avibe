@@ -128,7 +128,7 @@ const Contact = ({ classes, isMobile }) => {
           style={{ padding: 48, color: "white", marginBottom: 48 }}
         >
           <form name="contact" method="post">
-            {/* <input type="hidden" name="form-name" value="contact" /> */}
+            <input type="hidden" name="form-name" value="contact" />
             <div style={{}}>
               <div className={classes.input_holder}>
                 <TextField
