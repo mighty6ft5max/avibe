@@ -632,7 +632,7 @@ const Body = ({ classes, bodyRef }) => {
     <Grid classes={{ root: classes.body }} item xs={12} ref={bodyRef}>
       <Switch>
         <Route path="/contact">
-          <Contact />
+          <Contact isMobile={isMobile} />
         </Route>
         <Route path="/about">
           <About />

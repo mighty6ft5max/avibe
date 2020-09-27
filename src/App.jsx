@@ -263,41 +263,26 @@ const App = ({ classes }) => {
             <Button
               onClick={() => {
                 setOpen(false);
-                history.push("/contact");
-              }}
-              classes={{
-                root: classes.dash,
-              }}
-            >
-              Contact Us
-            </Button>
-          </Grid>
-          {/* <Grid item>
-                      <Button
-                        onClick={() => history.push("/testimonials")}
-                        classes={{
-                          root:
-                            classes[
-                              _.startsWith(pathname, "/testimonials")
-                                ? "menu_item_active"
-                                : "menu_item"
-                            ],
-                        }}
-                      >
-                        Testimonials
-                      </Button>
-                    </Grid> */}
-          <Grid item>
-            <Button
-              onClick={() => {
-                setOpen(false);
                 history.push("/about");
               }}
               classes={{
                 root: classes.dash,
               }}
             >
-              About Us
+              About
+            </Button>
+          </Grid>
+          <Grid item>
+            <Button
+              onClick={() => {
+                setOpen(false);
+                history.push("/contact");
+              }}
+              classes={{
+                root: classes.dash,
+              }}
+            >
+              Contact
             </Button>
           </Grid>
         </Grid>

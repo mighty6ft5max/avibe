@@ -40,8 +40,10 @@ const styles = (theme) => ({
     background: "linear-gradient(45deg,rgba(255,255,255,.3),transparent)",
     borderRadius: 8,
     boxShadow: theme.shadows[12],
+    maxWidth: 444,
+    width: "100%",
   },
-  input: { width: 270 },
+  input: { width: "100%" },
   input_label: { lineHeight: 1.6, margin: 0 },
   input_holder: {
     marginBottom: 12,
@@ -88,7 +90,7 @@ const styles = (theme) => ({
   },
 });
 
-const Contact = ({ classes }) => {
+const Contact = ({ classes, isMobile }) => {
   const [userMessage, setUserMessage] = useState({
     name: "",
     email: "",
@@ -107,7 +109,7 @@ const Contact = ({ classes }) => {
         classes={{ root: classes.contact_back }}
         container
         style={{
-          padding: 48,
+          padding: isMobile ? 24 : 48,
           minHeight: "100vh",
           width: "100%",
         }}
