@@ -128,8 +128,10 @@ const Contact = ({ classes, isMobile }) => {
           style={{ padding: 48, color: "white", marginBottom: 48 }}
         >
           <form
+            action="/contact"
             name="contact"
             method="post"
+            netlify
             data-netlify="true"
             data-netlify-honeypot="bot-field"
             enctype="application/x-www-form-urlencoded"
