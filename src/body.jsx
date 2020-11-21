@@ -25,6 +25,7 @@ import Home from "./pages/home";
 // import Imgs_4 from "./images/img_s_4.jpg";
 
 import AboutBack from "./images/slider_about.jpg";
+import AboutBackM from "./images/slider_about_m.jpg";
 import Contact from "./contact";
 import TasteEmporiumButton from "./images/taste_emporium/home_button.jpg";
 import JadeButton from "./images/1/JadeButton.jpg";
@@ -133,7 +134,7 @@ const products = [
 const Body = ({ classes, bodyRef }) => {
   const isMobile = useMediaQuery("(max-width:475px)");
 
-  const aboutBackgroundImages = AboutBack;
+  const aboutBackgroundImages = isMobile ? AboutBack : AboutBackM;
 
   const config = {
     mass: 1,
