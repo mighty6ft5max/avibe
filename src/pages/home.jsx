@@ -15,15 +15,8 @@ import {
   useMediaQuery,
   withStyles,
 } from "@material-ui/core";
-
-import SliderHome from "../images/slider_home.jpg";
-import Img_2 from "../images/img_m_2.jpg";
-import Img_3 from "../images/img_m_3.jpg";
-import Img_4 from "../images/img_m_4.jpg";
-//import Imgs_1 from "../images/img_m_1.jpg";
-import Imgs_2 from "../images/img_s_2.jpg";
-import Imgs_3 from "../images/img_s_3.jpg";
-import Imgs_4 from "../images/img_s_4.jpg";
+import SH from "../images/slider_home.jpg";
+import SHM from "../images/background-home.jpg";
 
 const styles = theme => ({
   actions: {
@@ -111,9 +104,7 @@ const Home = ({ classes, products }) => {
   const isMobile = useMediaQuery("(max-width:475px)");
   const ss_holderRef = useRef();
   //const [backgroundImage, setBackgroundImage] = useState(0);
-  const backgroundImages = isMobile
-    ? [SliderHome, Imgs_2, Imgs_3, Imgs_4]
-    : [SliderHome, Img_2, Img_3, Img_4];
+  const backgroundImages = isMobile ? SHM : SH;
 
   const config = {
     mass: 1,
@@ -121,7 +112,7 @@ const Home = ({ classes, products }) => {
     friction: 10,
   };
   const backgroundTransitions = useTransition(
-    backgroundImages[0],
+    backgroundImages,
     isMobile
       ? {
           from: { height: 275 * 1.15, width: "auto" },
@@ -141,7 +132,7 @@ const Home = ({ classes, products }) => {
         {backgroundTransitions(({ width, height, opacity }, item) => {
           return (
             <animated.img
-              src={backgroundImages[0]}
+              src={backgroundImages}
               alt="slideshow"
               style={{
                 position: "absolute",
