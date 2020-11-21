@@ -164,7 +164,7 @@ const Home = ({ classes, products }) => {
             {products.map(product => {
               const { name, link, store, product_link, img } = product;
               return (
-                <Grid item>
+                <Grid item key={link}>
                   <Card classes={{ root: classes.card }}>
                     <CardActionArea>
                       <CardMedia

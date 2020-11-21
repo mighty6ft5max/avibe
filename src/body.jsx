@@ -12,15 +12,19 @@ import {
   withStyles,
 } from "@material-ui/core";
 import Home from "./pages/home";
+import SH from "./images/slider_home.jpg";
+import SHM from "./images/background-home.jpg";
+// import SA from "./images/slider_about.jpg";
+// import SAM from "./images/slider_about_m.jpg";
+// import Img_1 from "./images/img_m_1.jpg";
+// import Img_2 from "./images/img_m_2.jpg";
+// import Img_3 from "./images/img_m_3.jpg";
+// import Img_4 from "./images/img_m_4.jpg";
+// import Imgs_1 from "./images/img_s_1.jpg";
+// import Imgs_2 from "./images/img_s_2.jpg";
+// import Imgs_3 from "./images/img_s_3.jpg";
+// import Imgs_4 from "./images/img_s_4.jpg";
 
-import Img_1 from "./images/img_m_1.jpg";
-import Img_2 from "./images/img_m_2.jpg";
-import Img_3 from "./images/img_m_3.jpg";
-import Img_4 from "./images/img_m_4.jpg";
-import Imgs_1 from "./images/img_s_1.jpg";
-import Imgs_2 from "./images/img_s_2.jpg";
-import Imgs_3 from "./images/img_s_3.jpg";
-import Imgs_4 from "./images/img_s_4.jpg";
 import AboutBack from "./images/slider_about.jpg";
 import Contact from "./contact";
 import TasteEmporiumButton from "./images/taste_emporium/home_button.jpg";
@@ -130,11 +134,9 @@ const products = [
 const Body = ({ classes, bodyRef }) => {
   const isMobile = useMediaQuery("(max-width:475px)");
 
-  const backgroundImages = isMobile
-    ? [Imgs_1, Imgs_2, Imgs_3, Imgs_4]
-    : [Img_1, Img_2, Img_3, Img_4];
-  const aboutBackgroundImages = [AboutBack];
-
+  const backgroundImages = isMobile ? SHM : SH;
+  const aboutBackgroundImages = AboutBack;
+  console.log("the image", backgroundImages);
   const config = {
     mass: 1,
     tension: 3,
@@ -166,7 +168,7 @@ const Body = ({ classes, bodyRef }) => {
           {backgroundTransitions(({ width, height, opacity }, item) => {
             return (
               <animated.img
-                src={aboutBackgroundImages[0]}
+                src={aboutBackgroundImages}
                 alt="slideshow"
                 style={{
                   position: "absolute",
