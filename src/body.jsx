@@ -12,8 +12,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import Home from "./pages/home";
-import SH from "./images/slider_home.jpg";
-import SHM from "./images/background-home.jpg";
+
 // import SA from "./images/slider_about.jpg";
 // import SAM from "./images/slider_about_m.jpg";
 // import Img_1 from "./images/img_m_1.jpg";
@@ -134,16 +133,15 @@ const products = [
 const Body = ({ classes, bodyRef }) => {
   const isMobile = useMediaQuery("(max-width:475px)");
 
-  const backgroundImages = isMobile ? SHM : SH;
   const aboutBackgroundImages = AboutBack;
-  console.log("the image", backgroundImages);
+
   const config = {
     mass: 1,
     tension: 3,
     friction: 10,
   };
   const backgroundTransitions = useTransition(
-    backgroundImages[0],
+    aboutBackgroundImages,
     isMobile
       ? {
           from: { height: 275 * 1.15, width: "auto" },
